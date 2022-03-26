@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class frm_titul
     Inherits System.Windows.Forms.Form
 
     'Форма переопределяет dispose для очистки списка компонентов.
@@ -47,14 +47,14 @@ Partial Class Form1
         Me.Button1.Text = "Start"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Form1
+        'frm_titul
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(638, 478)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.cmd_exit)
-        Me.Name = "Form1"
+        Me.Name = "frm_titul"
         Me.Text = "Курсовая работа"
         Me.ResumeLayout(False)
 
