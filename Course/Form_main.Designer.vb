@@ -59,7 +59,7 @@ Partial Class frm_main
         Me.СохранитьToolStripMenuItem.Image = CType(resources.GetObject("СохранитьToolStripMenuItem.Image"), System.Drawing.Image)
         Me.СохранитьToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.СохранитьToolStripMenuItem.Name = "СохранитьToolStripMenuItem"
-        Me.СохранитьToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.СохранитьToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.СохранитьToolStripMenuItem.Text = "&Сохранить"
         '
         'СохранитькакToolStripMenuItem
@@ -84,13 +84,13 @@ Partial Class frm_main
         'InputToolStripMenuItem
         '
         Me.InputToolStripMenuItem.Name = "InputToolStripMenuItem"
-        Me.InputToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InputToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.InputToolStripMenuItem.Text = "Ввод данных"
         '
         'CalcToolStripMenuItem1
         '
         Me.CalcToolStripMenuItem1.Name = "CalcToolStripMenuItem1"
-        Me.CalcToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.CalcToolStripMenuItem1.Size = New System.Drawing.Size(144, 22)
         Me.CalcToolStripMenuItem1.Text = "Расчет"
         Me.CalcToolStripMenuItem1.Visible = False
         '
@@ -104,13 +104,13 @@ Partial Class frm_main
         'BirthdayToolStripMenuItem
         '
         Me.BirthdayToolStripMenuItem.Name = "BirthdayToolStripMenuItem"
-        Me.BirthdayToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.BirthdayToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.BirthdayToolStripMenuItem.Text = "День рождения"
         '
         'CalculatorToolStripMenuItem
         '
         Me.CalculatorToolStripMenuItem.Name = "CalculatorToolStripMenuItem"
-        Me.CalculatorToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.CalculatorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CalculatorToolStripMenuItem.Text = "Калькулятор"
         '
         'HelpToolStripMenuItem
@@ -137,7 +137,7 @@ Partial Class frm_main
         Me.menustr.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FIleToolStripMenuItem, Me.CalcToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.menustr.Location = New System.Drawing.Point(0, 0)
         Me.menustr.Name = "menustr"
-        Me.menustr.Size = New System.Drawing.Size(631, 24)
+        Me.menustr.Size = New System.Drawing.Size(476, 24)
         Me.menustr.TabIndex = 7
         Me.menustr.Text = "MenuStrip2"
         '
@@ -145,7 +145,7 @@ Partial Class frm_main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(631, 388)
+        Me.ClientSize = New System.Drawing.Size(476, 273)
         Me.Controls.Add(Me.menustr)
         Me.Name = "frm_main"
         Me.Text = "Курсовая"

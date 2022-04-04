@@ -21,7 +21,7 @@
                     Return
                 End If
 
-                If IsNumeric(inp) Then
+                If IsNumeric(inp) Then 'Проверяем правильность ввода x
                     inp_trans = CDbl(inp)
                     If check_border(inp, x_borders(i, 0), x_borders(i, 1)) Then
                         flag = False
@@ -58,7 +58,7 @@
         Next i
         y = 80 + 2.15 * input_x_norm(0) + 1.45 * input_x_norm(1) - 0.89 * input_x_norm(2)
 
-        If Not check_border(y, 60, 90) Then
+        If Not check_border(y, 60, 90) Then 'Проверяем Y на нахождение впрределах от 60 до 90
             MsgBox("Y= " + CStr(y) + " не входит в грницы от 60 до 90 измените x1 x2 x3")
             CalcToolStripMenuItem1.Visible = False
             Return
@@ -66,5 +66,9 @@
 
         f = b0 + b1 * input_x_norm(0) + b2 * input_x_norm(1) + b3 * input_x_norm(2)
         MsgBox("F = " + CStr(f))
+    End Sub
+
+    Private Sub BirthdayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BirthdayToolStripMenuItem.Click
+        frm_birthday.Show()
     End Sub
 End Class
