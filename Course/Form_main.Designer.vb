@@ -104,13 +104,13 @@ Partial Class frm_main
         'BirthdayToolStripMenuItem
         '
         Me.BirthdayToolStripMenuItem.Name = "BirthdayToolStripMenuItem"
-        Me.BirthdayToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BirthdayToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.BirthdayToolStripMenuItem.Text = "День рождения"
         '
         'CalculatorToolStripMenuItem
         '
         Me.CalculatorToolStripMenuItem.Name = "CalculatorToolStripMenuItem"
-        Me.CalculatorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CalculatorToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.CalculatorToolStripMenuItem.Text = "Калькулятор"
         '
         'HelpToolStripMenuItem

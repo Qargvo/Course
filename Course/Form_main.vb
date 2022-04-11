@@ -2,6 +2,7 @@
     Dim input_x(3) As Double 'Введенные значения x1 x2 x3
     Dim x_borders = New Double(2, 1) {{0.4, 0.8}, {0.8, 0.9}, {8, 30}}
     Dim f As Double = 0
+    Dim input_x_help = New String(2) {"Скорость вращения барабана, об/мин", "Уровень в ванне вакуум-фильтра, м", "Концентрация вещества, г/л"}
 
     Private Sub ВыходToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         End
@@ -16,7 +17,7 @@
         For i = 0 To 2 'Цикл ввода x1 x2 x3
             flag = True
             Do
-                inp = InputBox("Введите значение X" + CStr(i + 1) + " между " + CStr(x_borders(i, 0)) + " и " + CStr(x_borders(i, 1)))
+                inp = InputBox("Введите значение " & " между " & CStr(x_borders(i, 0)) & " и " & CStr(x_borders(i, 1)), input_x_help(i))
                 If inp = "" Then
                     Return
                 End If
@@ -26,7 +27,11 @@
                     If check_border(inp, x_borders(i, 0), x_borders(i, 1)) Then
                         flag = False
                         input_x(i) = inp_trans
+                    Else
+                        MsgBox("Неверные границы", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Ошибка")
                     End If
+                Else
+                    MsgBox("Недопустимый тип", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Ошибка")
                 End If
             Loop While flag
         Next i
@@ -54,21 +59,21 @@
         For i = 0 To 2
             'Нормирование (Xi - Xcp) / dXi
             input_x_norm(i) = (input_x(i) - ((x_borders(i, 0) + x_borders(i, 1)) / 2)) / ((x_borders(i, 1) - x_borders(i, 0)) / 2)
-            MsgBox(CStr(input_x_norm(i)))
         Next i
         y = 80 + 2.15 * input_x_norm(0) + 1.45 * input_x_norm(1) - 0.89 * input_x_norm(2)
 
         If Not check_border(y, 60, 90) Then 'Проверяем Y на нахождение впрределах от 60 до 90
-            MsgBox("Y= " + CStr(y) + " не входит в грницы от 60 до 90 измените x1 x2 x3")
+            MsgBox("Влажность осадка " + CStr(y) + " не входит в грницы от 60 до 90 измените входные данные", MsgBoxStyle.Critical, "Ошибка")
             CalcToolStripMenuItem1.Visible = False
             Return
         End If
 
         f = b0 + b1 * input_x_norm(0) + b2 * input_x_norm(1) + b3 * input_x_norm(2)
-        MsgBox("F = " + CStr(f))
+        MsgBox(Format(f, "##0.00") & " кг/м^3", MsgBoxStyle.Information, "Производительность вакуум-фильтра по сухому веществу")
     End Sub
 
     Private Sub BirthdayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BirthdayToolStripMenuItem.Click
         frm_birthday.Show()
     End Sub
+
 End Class
