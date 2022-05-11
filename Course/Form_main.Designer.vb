@@ -39,6 +39,7 @@ Partial Class frm_main
         Me.AboutMeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutProgToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menustr = New System.Windows.Forms.MenuStrip()
+        Me.lbl_out = New System.Windows.Forms.Label()
         CType(Me.Error_input, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menustr.SuspendLayout()
         Me.SuspendLayout()
@@ -84,13 +85,13 @@ Partial Class frm_main
         'InputToolStripMenuItem
         '
         Me.InputToolStripMenuItem.Name = "InputToolStripMenuItem"
-        Me.InputToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.InputToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.InputToolStripMenuItem.Text = "Ввод данных"
         '
         'CalcToolStripMenuItem1
         '
         Me.CalcToolStripMenuItem1.Name = "CalcToolStripMenuItem1"
-        Me.CalcToolStripMenuItem1.Size = New System.Drawing.Size(144, 22)
+        Me.CalcToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.CalcToolStripMenuItem1.Text = "Расчет"
         Me.CalcToolStripMenuItem1.Visible = False
         '
@@ -141,11 +142,21 @@ Partial Class frm_main
         Me.menustr.TabIndex = 7
         Me.menustr.Text = "MenuStrip2"
         '
+        'lbl_out
+        '
+        Me.lbl_out.AutoSize = True
+        Me.lbl_out.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbl_out.Location = New System.Drawing.Point(22, 41)
+        Me.lbl_out.Name = "lbl_out"
+        Me.lbl_out.Size = New System.Drawing.Size(0, 24)
+        Me.lbl_out.TabIndex = 8
+        '
         'frm_main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(476, 273)
+        Me.Controls.Add(Me.lbl_out)
         Me.Controls.Add(Me.menustr)
         Me.Name = "frm_main"
         Me.Text = "Курсовая"
@@ -171,4 +182,5 @@ Partial Class frm_main
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutMeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutProgToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents lbl_out As Label
 End Class

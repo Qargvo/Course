@@ -28,14 +28,15 @@
                         flag = False
                         input_x(i) = inp_trans
                     Else
-                        MsgBox("Неверные границы", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Ошибка")
+                        MsgBox("Неверные границы", MsgBoxStyle.OkOnly & MsgBoxStyle.Critical, "Ошибка")
                     End If
                 Else
-                    MsgBox("Недопустимый тип", MsgBoxStyle.OkOnly Or MsgBoxStyle.Critical, "Ошибка")
+                    MsgBox("Недопустимый тип", MsgBoxStyle.OkOnly & MsgBoxStyle.Critical, "Ошибка")
                 End If
             Loop While flag
         Next i
         CalcToolStripMenuItem1.Visible = True
+        lbl_out.Text = "x1 = " & CStr(input_x(0)) & vbCrLf & "x2 = " & CStr(input_x(1)) & vbCrLf & "x3 = " & CStr(input_x(2))
     End Sub
 
     Function check_border(x, a, b) As Boolean 'Функция проверяет находится ли число в отрезке от a до b
@@ -65,6 +66,7 @@
         If Not check_border(y, 60, 90) Then 'Проверяем Y на нахождение впрределах от 60 до 90
             MsgBox("Влажность осадка " + CStr(y) + " не входит в грницы от 60 до 90 измените входные данные", MsgBoxStyle.Critical, "Ошибка")
             CalcToolStripMenuItem1.Visible = False
+            lbl_out.Text = ""
             Return
         End If
 
@@ -74,6 +76,10 @@
 
     Private Sub BirthdayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BirthdayToolStripMenuItem.Click
         frm_birthday.Show()
+    End Sub
+
+    Private Sub CalculatorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CalculatorToolStripMenuItem.Click
+        frm_calculator.Show()
     End Sub
 
 End Class

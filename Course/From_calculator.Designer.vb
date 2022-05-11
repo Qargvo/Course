@@ -28,6 +28,7 @@ Partial Class frm_calculator
         Me.btn_minus = New System.Windows.Forms.Button()
         Me.btn_div = New System.Windows.Forms.Button()
         Me.btn_equal = New System.Windows.Forms.Button()
+        Me.btn_cancel = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txt_input
@@ -37,6 +38,7 @@ Partial Class frm_calculator
         Me.txt_input.Name = "txt_input"
         Me.txt_input.Size = New System.Drawing.Size(345, 38)
         Me.txt_input.TabIndex = 0
+        Me.txt_input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'btn_plus
         '
@@ -83,16 +85,27 @@ Partial Class frm_calculator
         Me.btn_equal.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.btn_equal.Location = New System.Drawing.Point(263, 102)
         Me.btn_equal.Name = "btn_equal"
-        Me.btn_equal.Size = New System.Drawing.Size(80, 179)
+        Me.btn_equal.Size = New System.Drawing.Size(80, 80)
         Me.btn_equal.TabIndex = 5
         Me.btn_equal.Text = "="
         Me.btn_equal.UseVisualStyleBackColor = True
+        '
+        'btn_cancel
+        '
+        Me.btn_cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.btn_cancel.Location = New System.Drawing.Point(263, 201)
+        Me.btn_cancel.Name = "btn_cancel"
+        Me.btn_cancel.Size = New System.Drawing.Size(80, 80)
+        Me.btn_cancel.TabIndex = 6
+        Me.btn_cancel.Text = "C"
+        Me.btn_cancel.UseVisualStyleBackColor = True
         '
         'frm_calculator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(408, 315)
+        Me.Controls.Add(Me.btn_cancel)
         Me.Controls.Add(Me.btn_equal)
         Me.Controls.Add(Me.btn_div)
         Me.Controls.Add(Me.btn_minus)
@@ -112,4 +125,5 @@ Partial Class frm_calculator
     Friend WithEvents btn_minus As Button
     Friend WithEvents btn_div As Button
     Friend WithEvents btn_equal As Button
+    Friend WithEvents btn_cancel As Button
 End Class

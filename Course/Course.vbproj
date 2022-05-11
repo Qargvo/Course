@@ -102,16 +102,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form3.Designer.vb">
-      <DependentUpon>Form3.vb</DependentUpon>
+    <Compile Include="Form_birthday.Designer.vb">
+      <DependentUpon>Form_birthday.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form3.vb">
+    <Compile Include="Form_birthday.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.vb">
-      <DependentUpon>Form4.vb</DependentUpon>
+    <Compile Include="From_calculator.Designer.vb">
+      <DependentUpon>From_calculator.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form4.vb">
+    <Compile Include="From_calculator.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_main.Designer.vb">
@@ -142,15 +142,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="operatinosPackage\Division.vb" />
+    <Compile Include="operatinosPackage\Minus.vb" />
+    <Compile Include="operatinosPackage\Mult.vb" />
     <Compile Include="operatinosPackage\operation.vb" />
     <Compile Include="operatinosPackage\plus.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.vb</DependentUpon>
+    <EmbeddedResource Include="Form_birthday.resx">
+      <DependentUpon>Form_birthday.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.vb</DependentUpon>
+    <EmbeddedResource Include="From_calculator.resx">
+      <DependentUpon>From_calculator.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_main.resx">
       <DependentUpon>Form_main.vb</DependentUpon>
