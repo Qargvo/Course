@@ -43,6 +43,8 @@ Partial Class frm_main
         Me.ContextMenuStripMain = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.OutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClearToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveFileDialog = New System.Windows.Forms.SaveFileDialog()
+        Me.LoadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.Error_input, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menustr.SuspendLayout()
         Me.ContextMenuStripMain.SuspendLayout()
@@ -54,7 +56,7 @@ Partial Class frm_main
         '
         'FIleToolStripMenuItem
         '
-        Me.FIleToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.СохранитьToolStripMenuItem, Me.СохранитькакToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.FIleToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.СохранитьToolStripMenuItem, Me.СохранитькакToolStripMenuItem, Me.LoadToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FIleToolStripMenuItem.Name = "FIleToolStripMenuItem"
         Me.FIleToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.FIleToolStripMenuItem.Text = "Файл"
@@ -64,6 +66,7 @@ Partial Class frm_main
         Me.СохранитьToolStripMenuItem.Image = CType(resources.GetObject("СохранитьToolStripMenuItem.Image"), System.Drawing.Image)
         Me.СохранитьToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.СохранитьToolStripMenuItem.Name = "СохранитьToolStripMenuItem"
+        Me.СохранитьToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
         Me.СохранитьToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.СохранитьToolStripMenuItem.Text = "&Сохранить"
         '
@@ -173,6 +176,12 @@ Partial Class frm_main
         Me.ClearToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
         Me.ClearToolStripMenuItem.Text = "Отчистить"
         '
+        'LoadToolStripMenuItem
+        '
+        Me.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem"
+        Me.LoadToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LoadToolStripMenuItem.Text = "Загрузить"
+        '
         'frm_main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -209,4 +218,6 @@ Partial Class frm_main
     Friend WithEvents ContextMenuStripMain As ContextMenuStrip
     Friend WithEvents OutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ClearToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveFileDialog As SaveFileDialog
+    Friend WithEvents LoadToolStripMenuItem As ToolStripMenuItem
 End Class

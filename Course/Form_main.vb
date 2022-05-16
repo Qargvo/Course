@@ -5,6 +5,7 @@
     Dim f As Double = 0
     Dim f_flag As Boolean = False
     Dim input_x_help = New String(2) {"Скорость вращения барабана, об/мин", "Уровень в ванне вакуум-фильтра, м", "Концентрация вещества, г/л"}
+    Dim lastFile As String = ""
 
     Private Sub ВыходToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         End
@@ -119,5 +120,75 @@
 
     Private Sub OutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OutToolStripMenuItem.Click
         Conclus()
+    End Sub
+
+    Private Sub СохранитькакToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles СохранитькакToolStripMenuItem.Click
+        save()
+    End Sub
+    Function save()
+        Dim s As String
+        If input_x_flag Then
+            s = CStr(input_x(0)) & " " & CStr(input_x(1)) & " " & CStr(input_x(2))
+            If f_flag Then
+                s = s & CStr(f)
+            End If
+            SaveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt"
+            If SaveFileDialog.ShowDialog = Windows.Forms.DialogResult.OK Then
+                My.Computer.FileSystem.WriteAllText(SaveFileDialog.FileName, s, False, System.Text.Encoding.Default)
+                lastFile = SaveFileDialog.FileName
+            End If
+        End If
+
+    End Function
+
+    Private Sub СохранитьToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles СохранитьToolStripMenuItem.Click
+        Dim s As String
+        If lastFile = "" Then
+            save()
+        Else
+            s = CStr(input_x(0)) & " " & CStr(input_x(1)) & " " & CStr(input_x(2))
+            If f_flag Then
+                s = s & " " & CStr(f)
+            End If
+            My.Computer.FileSystem.WriteAllText(lastFile, s, False, System.Text.Encoding.Default)
+
+        End If
+    End Sub
+
+    Private Sub LoadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadToolStripMenuItem.Click
+        Dim openFileDialog As New OpenFileDialog
+        Dim loadArr() As Object
+        Dim s As String
+
+        If openFileDialog.ShowDialog() = DialogResult.OK Then
+            lastFile = openFileDialog.FileName
+            s = My.Computer.FileSystem.ReadAllText(lastFile)
+            Try
+                loadArr = Split(s, " ")
+                For i = 0 To 2
+                    input_x(i) = CDbl(loadArr(i))
+                    input_x_flag = True
+                Next i
+                If loadArr.Length() > 3 Then
+                    f = CDbl(loadArr(3))
+                    f_flag = True
+                Else
+                    f_flag = False
+                End If
+                CalcToolStripMenuItemF.Visible = True
+                lbl_out.Text = ""
+                ClearToolStripMenuItem.Visible = False
+            Catch
+                MsgBox("Файл поврежден", MsgBoxStyle.Critical, "Ошибка")
+            End Try
+        End If
+    End Sub
+
+    Private Sub lbl_out_MouseClick(sender As Object, e As MouseEventArgs) Handles lbl_out.MouseClick
+        If e.Button = MouseButtons.Right Then
+            ContextMenuStripMain.Show()
+            ContextMenuStripMain.Top = MousePosition.Y
+            ContextMenuStripMain.Left = MousePosition.X
+        End If
     End Sub
 End Class
