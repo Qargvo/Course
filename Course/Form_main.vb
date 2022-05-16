@@ -1,7 +1,9 @@
 ﻿Public Class frm_main
     Dim input_x(3) As Double 'Введенные значения x1 x2 x3
+    Dim input_x_flag As Boolean = False
     Dim x_borders = New Double(2, 1) {{0.4, 0.8}, {0.8, 0.9}, {8, 30}}
     Dim f As Double = 0
+    Dim f_flag As Boolean = False
     Dim input_x_help = New String(2) {"Скорость вращения барабана, об/мин", "Уровень в ванне вакуум-фильтра, м", "Концентрация вещества, г/л"}
 
     Private Sub ВыходToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
@@ -35,8 +37,9 @@
                 End If
             Loop While flag
         Next i
-        CalcToolStripMenuItem1.Visible = True
-        lbl_out.Text = "x1 = " & CStr(input_x(0)) & vbCrLf & "x2 = " & CStr(input_x(1)) & vbCrLf & "x3 = " & CStr(input_x(2))
+        CalcToolStripMenuItemF.Visible = True
+        input_x_flag = True
+        Conclus()
     End Sub
 
     Function check_border(x, a, b) As Boolean 'Функция проверяет находится ли число в отрезке от a до b
@@ -47,7 +50,7 @@
         End If
     End Function
 
-    Private Sub CalcToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CalcToolStripMenuItem1.Click
+    Private Sub CalcToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CalcToolStripMenuItemF.Click
         Dim y As Double
         Dim input_x_norm(3) As Double
         Dim i As Integer
@@ -65,13 +68,14 @@
 
         If Not check_border(y, 60, 90) Then 'Проверяем Y на нахождение впрределах от 60 до 90
             MsgBox("Влажность осадка " + CStr(y) + " не входит в грницы от 60 до 90 измените входные данные", MsgBoxStyle.Critical, "Ошибка")
-            CalcToolStripMenuItem1.Visible = False
+            CalcToolStripMenuItemF.Visible = False
             lbl_out.Text = ""
             Return
         End If
-
+        f_flag = True
         f = b0 + b1 * input_x_norm(0) + b2 * input_x_norm(1) + b3 * input_x_norm(2)
         MsgBox(Format(f, "##0.00") & " кг/м^3", MsgBoxStyle.Information, "Производительность вакуум-фильтра по сухому веществу")
+        Conclus()
     End Sub
 
     Private Sub BirthdayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BirthdayToolStripMenuItem.Click
@@ -82,4 +86,38 @@
         frm_calculator.Show()
     End Sub
 
+    Function Conclus() As Integer
+        If input_x_flag Then
+            lbl_out.Text = input_x_help(0) & vbCrLf & CStr(input_x(0)) & vbCrLf &
+            input_x_help(1) & vbCrLf & CStr(input_x(1)) & vbCrLf &
+            input_x_help(2) & vbCrLf & CStr(input_x(2))
+            ClearToolStripMenuItem.Visible = True
+        End If
+        If f_flag Then
+            lbl_out.Text = lbl_out.Text & vbCrLf & "Производительность вакуум-фильтра по сухому веществу кг/м^3" & vbCrLf & Format(f, "##0.00")
+        End If
+
+        Return 0
+    End Function
+
+    Private Sub frm_main_MouseClick(sender As Object, e As MouseEventArgs) Handles Me.MouseClick
+        If e.Button = MouseButtons.Right Then
+            ContextMenuStripMain.Show()
+            ContextMenuStripMain.Top = MousePosition.Y
+            ContextMenuStripMain.Left = MousePosition.X
+        End If
+    End Sub
+
+    Private Sub frm_main_Load(sender As Object, e As EventArgs) Handles Me.Load
+        ClearToolStripMenuItem.Visible = False
+    End Sub
+
+    Private Sub ClearToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearToolStripMenuItem.Click
+        lbl_out.Text = ""
+        ClearToolStripMenuItem.Visible = False
+    End Sub
+
+    Private Sub OutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OutToolStripMenuItem.Click
+        Conclus()
+    End Sub
 End Class

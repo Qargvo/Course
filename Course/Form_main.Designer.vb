@@ -31,7 +31,7 @@ Partial Class frm_main
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CalcToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InputToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CalcToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CalcToolStripMenuItemF = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BirthdayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CalculatorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -40,8 +40,12 @@ Partial Class frm_main
         Me.AboutProgToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menustr = New System.Windows.Forms.MenuStrip()
         Me.lbl_out = New System.Windows.Forms.Label()
+        Me.ContextMenuStripMain = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.OutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClearToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.Error_input, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menustr.SuspendLayout()
+        Me.ContextMenuStripMain.SuspendLayout()
         Me.SuspendLayout()
         '
         'Error_input
@@ -60,24 +64,24 @@ Partial Class frm_main
         Me.СохранитьToolStripMenuItem.Image = CType(resources.GetObject("СохранитьToolStripMenuItem.Image"), System.Drawing.Image)
         Me.СохранитьToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.СохранитьToolStripMenuItem.Name = "СохранитьToolStripMenuItem"
-        Me.СохранитьToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.СохранитьToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.СохранитьToolStripMenuItem.Text = "&Сохранить"
         '
         'СохранитькакToolStripMenuItem
         '
         Me.СохранитькакToolStripMenuItem.Name = "СохранитькакToolStripMenuItem"
-        Me.СохранитькакToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.СохранитькакToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.СохранитькакToolStripMenuItem.Text = "Сохранить &как"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ExitToolStripMenuItem.Text = "Вы&ход"
         '
         'CalcToolStripMenuItem
         '
-        Me.CalcToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InputToolStripMenuItem, Me.CalcToolStripMenuItem1})
+        Me.CalcToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InputToolStripMenuItem, Me.CalcToolStripMenuItemF})
         Me.CalcToolStripMenuItem.Name = "CalcToolStripMenuItem"
         Me.CalcToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
         Me.CalcToolStripMenuItem.Text = "Расчет"
@@ -88,12 +92,12 @@ Partial Class frm_main
         Me.InputToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.InputToolStripMenuItem.Text = "Ввод данных"
         '
-        'CalcToolStripMenuItem1
+        'CalcToolStripMenuItemF
         '
-        Me.CalcToolStripMenuItem1.Name = "CalcToolStripMenuItem1"
-        Me.CalcToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.CalcToolStripMenuItem1.Text = "Расчет"
-        Me.CalcToolStripMenuItem1.Visible = False
+        Me.CalcToolStripMenuItemF.Name = "CalcToolStripMenuItemF"
+        Me.CalcToolStripMenuItemF.Size = New System.Drawing.Size(180, 22)
+        Me.CalcToolStripMenuItemF.Text = "Расчет"
+        Me.CalcToolStripMenuItemF.Visible = False
         '
         'ToolsToolStripMenuItem
         '
@@ -151,6 +155,24 @@ Partial Class frm_main
         Me.lbl_out.Size = New System.Drawing.Size(0, 24)
         Me.lbl_out.TabIndex = 8
         '
+        'ContextMenuStripMain
+        '
+        Me.ContextMenuStripMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OutToolStripMenuItem, Me.ClearToolStripMenuItem})
+        Me.ContextMenuStripMain.Name = "ContextMenuStrip1"
+        Me.ContextMenuStripMain.Size = New System.Drawing.Size(132, 48)
+        '
+        'OutToolStripMenuItem
+        '
+        Me.OutToolStripMenuItem.Name = "OutToolStripMenuItem"
+        Me.OutToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
+        Me.OutToolStripMenuItem.Text = "Вывести"
+        '
+        'ClearToolStripMenuItem
+        '
+        Me.ClearToolStripMenuItem.Name = "ClearToolStripMenuItem"
+        Me.ClearToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
+        Me.ClearToolStripMenuItem.Text = "Отчистить"
+        '
         'frm_main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -163,6 +185,7 @@ Partial Class frm_main
         CType(Me.Error_input, System.ComponentModel.ISupportInitialize).EndInit()
         Me.menustr.ResumeLayout(False)
         Me.menustr.PerformLayout()
+        Me.ContextMenuStripMain.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -175,7 +198,7 @@ Partial Class frm_main
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CalcToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InputToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CalcToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents CalcToolStripMenuItemF As ToolStripMenuItem
     Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BirthdayToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CalculatorToolStripMenuItem As ToolStripMenuItem
@@ -183,4 +206,7 @@ Partial Class frm_main
     Friend WithEvents AboutMeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutProgToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lbl_out As Label
+    Friend WithEvents ContextMenuStripMain As ContextMenuStrip
+    Friend WithEvents OutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClearToolStripMenuItem As ToolStripMenuItem
 End Class
