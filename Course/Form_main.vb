@@ -22,7 +22,7 @@
             Do
                 inp = InputBox("Введите значение " & " между " & CStr(x_borders(i, 0)) & " и " & CStr(x_borders(i, 1)), input_x_help(i))
                 If inp = "" Then
-                    Return
+                    Exit For
                 End If
 
                 If IsNumeric(inp) Then 'Проверяем правильность ввода x
@@ -37,10 +37,13 @@
                     MsgBox("Недопустимый тип", MsgBoxStyle.OkOnly & MsgBoxStyle.Critical, "Ошибка")
                 End If
             Loop While flag
+            f_flag = False
+            If i = 2 Then
+                input_x_flag = True
+                CalcToolStripMenuItemF.Visible = True
+            End If
         Next i
-        CalcToolStripMenuItemF.Visible = True
-        input_x_flag = True
-        Conclus()
+        If input_x_flag Then Conclus()
     End Sub
 
     Function check_border(x, a, b) As Boolean 'Функция проверяет находится ли число в отрезке от a до b
@@ -95,7 +98,7 @@
             ClearToolStripMenuItem.Visible = True
         End If
         If f_flag Then
-            lbl_out.Text = lbl_out.Text & vbCrLf & "Производительность вакуум-фильтра по сухому веществу кг/м^3" & vbCrLf & Format(f, "##0.00")
+            lbl_out.Text = lbl_out.Text & vbCrLf & "Производительность вакуум-фильтра " & vbCrLf & "по сухому веществу кг/м^3" & vbCrLf & Format(f, "##0.00")
         End If
 
         Return 0
@@ -190,5 +193,9 @@
             ContextMenuStripMain.Top = MousePosition.Y
             ContextMenuStripMain.Left = MousePosition.X
         End If
+    End Sub
+
+    Private Sub ВыходToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles ВыходToolStripMenuItem.Click
+        End
     End Sub
 End Class

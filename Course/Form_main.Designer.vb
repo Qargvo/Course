@@ -28,6 +28,7 @@ Partial Class frm_main
         Me.FIleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.СохранитьToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.СохранитькакToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CalcToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InputToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -44,7 +45,7 @@ Partial Class frm_main
         Me.OutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClearToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveFileDialog = New System.Windows.Forms.SaveFileDialog()
-        Me.LoadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ВыходToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.Error_input, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menustr.SuspendLayout()
         Me.ContextMenuStripMain.SuspendLayout()
@@ -67,19 +68,25 @@ Partial Class frm_main
         Me.СохранитьToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.СохранитьToolStripMenuItem.Name = "СохранитьToolStripMenuItem"
         Me.СохранитьToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.СохранитьToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.СохранитьToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.СохранитьToolStripMenuItem.Text = "&Сохранить"
         '
         'СохранитькакToolStripMenuItem
         '
         Me.СохранитькакToolStripMenuItem.Name = "СохранитькакToolStripMenuItem"
-        Me.СохранитькакToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.СохранитькакToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.СохранитькакToolStripMenuItem.Text = "Сохранить &как"
+        '
+        'LoadToolStripMenuItem
+        '
+        Me.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem"
+        Me.LoadToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
+        Me.LoadToolStripMenuItem.Text = "Загрузить"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.ExitToolStripMenuItem.Text = "Вы&ход"
         '
         'CalcToolStripMenuItem
@@ -92,13 +99,13 @@ Partial Class frm_main
         'InputToolStripMenuItem
         '
         Me.InputToolStripMenuItem.Name = "InputToolStripMenuItem"
-        Me.InputToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InputToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.InputToolStripMenuItem.Text = "Ввод данных"
         '
         'CalcToolStripMenuItemF
         '
         Me.CalcToolStripMenuItemF.Name = "CalcToolStripMenuItemF"
-        Me.CalcToolStripMenuItemF.Size = New System.Drawing.Size(180, 22)
+        Me.CalcToolStripMenuItemF.Size = New System.Drawing.Size(143, 22)
         Me.CalcToolStripMenuItemF.Text = "Расчет"
         Me.CalcToolStripMenuItemF.Visible = False
         '
@@ -160,27 +167,27 @@ Partial Class frm_main
         '
         'ContextMenuStripMain
         '
-        Me.ContextMenuStripMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OutToolStripMenuItem, Me.ClearToolStripMenuItem})
+        Me.ContextMenuStripMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OutToolStripMenuItem, Me.ClearToolStripMenuItem, Me.ВыходToolStripMenuItem})
         Me.ContextMenuStripMain.Name = "ContextMenuStrip1"
-        Me.ContextMenuStripMain.Size = New System.Drawing.Size(132, 48)
+        Me.ContextMenuStripMain.Size = New System.Drawing.Size(153, 92)
         '
         'OutToolStripMenuItem
         '
         Me.OutToolStripMenuItem.Name = "OutToolStripMenuItem"
-        Me.OutToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
+        Me.OutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.OutToolStripMenuItem.Text = "Вывести"
         '
         'ClearToolStripMenuItem
         '
         Me.ClearToolStripMenuItem.Name = "ClearToolStripMenuItem"
-        Me.ClearToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
+        Me.ClearToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ClearToolStripMenuItem.Text = "Отчистить"
         '
-        'LoadToolStripMenuItem
+        'ВыходToolStripMenuItem
         '
-        Me.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem"
-        Me.LoadToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.LoadToolStripMenuItem.Text = "Загрузить"
+        Me.ВыходToolStripMenuItem.Name = "ВыходToolStripMenuItem"
+        Me.ВыходToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ВыходToolStripMenuItem.Text = "Выход"
         '
         'frm_main
         '
@@ -220,4 +227,5 @@ Partial Class frm_main
     Friend WithEvents ClearToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SaveFileDialog As SaveFileDialog
     Friend WithEvents LoadToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ВыходToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

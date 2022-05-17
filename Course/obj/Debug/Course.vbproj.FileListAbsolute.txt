@@ -1,0 +1,17 @@
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\bin\Debug\Course.exe.config
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\bin\Debug\Course.exe.manifest
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\bin\Debug\Course.application
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\bin\Debug\Course.exe
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\bin\Debug\Course.pdb
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\bin\Debug\Course.xml
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\obj\Debug\Course.frm_birthday.resources
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\obj\Debug\Course.frm_calculator.resources
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\obj\Debug\Course.frm_main.resources
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\obj\Debug\Course.frm_titul.resources
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\obj\Debug\Course.Resources.resources
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\obj\Debug\Course.vbproj.GenerateResource.Cache
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\obj\Debug\Course.exe.manifest
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\obj\Debug\Course.application
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\obj\Debug\Course.exe
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\obj\Debug\Course.xml
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\obj\Debug\Course.pdb
