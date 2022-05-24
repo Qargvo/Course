@@ -44,8 +44,8 @@ Partial Class frm_main
         Me.ContextMenuStripMain = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.OutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClearToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SaveFileDialog = New System.Windows.Forms.SaveFileDialog()
         Me.ВыходToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveFileDialog = New System.Windows.Forms.SaveFileDialog()
         CType(Me.Error_input, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menustr.SuspendLayout()
         Me.ContextMenuStripMain.SuspendLayout()
@@ -138,13 +138,13 @@ Partial Class frm_main
         'AboutMeToolStripMenuItem
         '
         Me.AboutMeToolStripMenuItem.Name = "AboutMeToolStripMenuItem"
-        Me.AboutMeToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
+        Me.AboutMeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AboutMeToolStripMenuItem.Text = "Про меня"
         '
         'AboutProgToolStripMenuItem
         '
         Me.AboutProgToolStripMenuItem.Name = "AboutProgToolStripMenuItem"
-        Me.AboutProgToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
+        Me.AboutProgToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AboutProgToolStripMenuItem.Text = "О программе"
         '
         'menustr
@@ -169,24 +169,24 @@ Partial Class frm_main
         '
         Me.ContextMenuStripMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OutToolStripMenuItem, Me.ClearToolStripMenuItem, Me.ВыходToolStripMenuItem})
         Me.ContextMenuStripMain.Name = "ContextMenuStrip1"
-        Me.ContextMenuStripMain.Size = New System.Drawing.Size(153, 92)
+        Me.ContextMenuStripMain.Size = New System.Drawing.Size(132, 70)
         '
         'OutToolStripMenuItem
         '
         Me.OutToolStripMenuItem.Name = "OutToolStripMenuItem"
-        Me.OutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.OutToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
         Me.OutToolStripMenuItem.Text = "Вывести"
         '
         'ClearToolStripMenuItem
         '
         Me.ClearToolStripMenuItem.Name = "ClearToolStripMenuItem"
-        Me.ClearToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ClearToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
         Me.ClearToolStripMenuItem.Text = "Отчистить"
         '
         'ВыходToolStripMenuItem
         '
         Me.ВыходToolStripMenuItem.Name = "ВыходToolStripMenuItem"
-        Me.ВыходToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ВыходToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
         Me.ВыходToolStripMenuItem.Text = "Выход"
         '
         'frm_main

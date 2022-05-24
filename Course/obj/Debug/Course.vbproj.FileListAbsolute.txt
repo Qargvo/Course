@@ -15,3 +15,4 @@ Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\obj\Deb
 Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\obj\Debug\Course.exe
 Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\obj\Debug\Course.xml
 Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\obj\Debug\Course.pdb
+Z:\Бондаренкова\521_2021\Козюлин\Course-master\Course\obj\Debug\Course.frm_aboutMe.resources

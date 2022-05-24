@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Course.exe" size="63488">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Course.exe" size="163328">
       <assemblyIdentity name="Course" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RHiR9Huf80W38a9srv2kMhL0ggP11i0YpQGUqAhs6+c=</dsig:DigestValue>
+        <dsig:DigestValue>pVC//GjzFAjihrK5vye84602O5/QE05YQEelUtZ2ruY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

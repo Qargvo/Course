@@ -24,7 +24,8 @@ Partial Class frm_titul
     Private Sub InitializeComponent()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.cmd_exit = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnstart = New System.Windows.Forms.Button()
+        Me.lbl_mainTittle = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'cmd_exit
@@ -34,33 +35,46 @@ Partial Class frm_titul
         Me.cmd_exit.Name = "cmd_exit"
         Me.cmd_exit.Size = New System.Drawing.Size(140, 94)
         Me.cmd_exit.TabIndex = 0
-        Me.cmd_exit.Text = "Exit"
+        Me.cmd_exit.Text = "Выход"
         Me.cmd_exit.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnstart
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Button1.Location = New System.Drawing.Point(454, 335)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(140, 93)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Start"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnstart.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.btnstart.Location = New System.Drawing.Point(578, 335)
+        Me.btnstart.Name = "btnstart"
+        Me.btnstart.Size = New System.Drawing.Size(140, 93)
+        Me.btnstart.TabIndex = 1
+        Me.btnstart.Text = "Начать"
+        Me.btnstart.UseVisualStyleBackColor = True
+        '
+        'lbl_mainTittle
+        '
+        Me.lbl_mainTittle.AutoSize = True
+        Me.lbl_mainTittle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbl_mainTittle.Location = New System.Drawing.Point(33, 85)
+        Me.lbl_mainTittle.Name = "lbl_mainTittle"
+        Me.lbl_mainTittle.Size = New System.Drawing.Size(0, 20)
+        Me.lbl_mainTittle.TabIndex = 2
+        Me.lbl_mainTittle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'frm_titul
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(638, 478)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(763, 478)
+        Me.Controls.Add(Me.lbl_mainTittle)
+        Me.Controls.Add(Me.btnstart)
         Me.Controls.Add(Me.cmd_exit)
         Me.Name = "frm_titul"
         Me.Text = "Курсовая работа"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
     Friend WithEvents cmd_exit As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnstart As Button
+    Friend WithEvents lbl_mainTittle As System.Windows.Forms.Label
 End Class

@@ -13,19 +13,20 @@ Public Class frm_calculator
     Dim flg_op As Boolean = True
     Dim dict As New Dictionary(Of String, Object)()
 
-
+    'Функция расчета значения
     Function calculate(ByVal oper As Char) As Double
         If Not dict(oper).validate(a, b) Then
 
-            MsgBox("Ошибка", MsgBoxStyle.Critical & vbOKOnly)
+            MsgBox("Ошибка выполнения операции", MsgBoxStyle.Critical, "Ошибка")
             cancel()
             Return 0
         End If
         Return dict(oper).calc(a, b)
     End Function
-
+    'Функция вызываемая пр нажатии кнопок действий
     Function main(ByVal oper As Char) As Integer
         txt_input.Enabled = True
+        txt_input.Focus()
         If Not flg_op Then
             flg_a = False
             flg_b = False
@@ -51,6 +52,7 @@ Public Class frm_calculator
         txt_input.Text = ""
         Return 1
     End Function
+    'Функция сброса к исходному состоянию
     Function cancel() As Integer
         flg_a = False
         flg_b = False
@@ -59,18 +61,18 @@ Public Class frm_calculator
         txt_input.Enabled = True
         Return 1
     End Function
-
+    'Иициализация
     Private Sub frm_calculator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dict.Add((New plus).name(), New plus)
         dict.Add((New Minus).name(), New Minus)
         dict.Add((New Mult).name(), New Mult)
         dict.Add((New Division).name(), New Division)
     End Sub
-
+    'Нажатие кнопки +
     Private Sub btn_plus_Click(sender As Object, e As EventArgs) Handles btn_plus.Click
         main("+")
     End Sub
-
+    'Нажатие кнопки =
     Private Sub btn_equal_Click(sender As Object, e As EventArgs) Handles btn_equal.Click
         If flg_op Then
             Try
@@ -90,19 +92,19 @@ Public Class frm_calculator
             flg_op = False
         End If
     End Sub
-
+    'Нажатие кнопки С
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         cancel()
     End Sub
-
+    'Нажатие кнопки -
     Private Sub btn_minus_Click(sender As Object, e As EventArgs) Handles btn_minus.Click
         main("-")
     End Sub
-
+    'Нажатие кнопки *
     Private Sub btn_mul_Click(sender As Object, e As EventArgs) Handles btn_mul.Click
         main("*")
     End Sub
-
+    'Нажатие кнопки /
     Private Sub btn_div_Click(sender As Object, e As EventArgs) Handles btn_div.Click
         main("/")
     End Sub

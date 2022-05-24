@@ -6,11 +6,11 @@
     Dim f_flag As Boolean = False
     Dim input_x_help = New String(2) {"Скорость вращения барабана, об/мин", "Уровень в ванне вакуум-фильтра, м", "Концентрация вещества, г/л"}
     Dim lastFile As String = ""
-
+    'Файл -> выход
     Private Sub ВыходToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         End
     End Sub
-
+    'Рассчет -> ввод данных
     Private Sub InputToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InputToolStripMenuItem.Click
         Dim i As Integer
         Dim inp As String
@@ -53,7 +53,7 @@
             Return False
         End If
     End Function
-
+    'Расчет -> расчет F
     Private Sub CalcToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CalcToolStripMenuItemF.Click
         Dim y As Double
         Dim input_x_norm(3) As Double
@@ -81,15 +81,15 @@
         MsgBox(Format(f, "##0.00") & " кг/м^3", MsgBoxStyle.Information, "Производительность вакуум-фильтра по сухому веществу")
         Conclus()
     End Sub
-
+    'Вызов окна дня рождения
     Private Sub BirthdayToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BirthdayToolStripMenuItem.Click
         frm_birthday.Show()
     End Sub
-
+    'Вызов окна калькулятора
     Private Sub CalculatorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CalculatorToolStripMenuItem.Click
         frm_calculator.Show()
     End Sub
-
+    'Вывод на экран переменных и результата рассчета
     Function Conclus() As Integer
         If input_x_flag Then
             lbl_out.Text = input_x_help(0) & vbCrLf & CStr(input_x(0)) & vbCrLf &
@@ -103,7 +103,7 @@
 
         Return 0
     End Function
-
+    'Вызов контекстного меню
     Private Sub frm_main_MouseClick(sender As Object, e As MouseEventArgs) Handles Me.MouseClick
         If e.Button = MouseButtons.Right Then
             ContextMenuStripMain.Show()
@@ -111,29 +111,30 @@
             ContextMenuStripMain.Left = MousePosition.X
         End If
     End Sub
-
+    'Инициализация
     Private Sub frm_main_Load(sender As Object, e As EventArgs) Handles Me.Load
         ClearToolStripMenuItem.Visible = False
     End Sub
-
+    'Контекстная кнопка очистить экран
     Private Sub ClearToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearToolStripMenuItem.Click
         lbl_out.Text = ""
         ClearToolStripMenuItem.Visible = False
     End Sub
-
+    'контекстная кнопка вывода информации на форму
     Private Sub OutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OutToolStripMenuItem.Click
         Conclus()
     End Sub
-
+    'Файл -> Скохранить как
     Private Sub СохранитькакToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles СохранитькакToolStripMenuItem.Click
         save()
     End Sub
+    'Описание функции сохранения
     Function save()
         Dim s As String
         If input_x_flag Then
             s = CStr(input_x(0)) & " " & CStr(input_x(1)) & " " & CStr(input_x(2))
             If f_flag Then
-                s = s & CStr(f)
+                s = s & " " & CStr(f)
             End If
             SaveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt"
             If SaveFileDialog.ShowDialog = Windows.Forms.DialogResult.OK Then
@@ -143,7 +144,7 @@
         End If
 
     End Function
-
+    'файл -> сохранить
     Private Sub СохранитьToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles СохранитьToolStripMenuItem.Click
         Dim s As String
         If lastFile = "" Then
@@ -157,7 +158,7 @@
 
         End If
     End Sub
-
+    'Файл -> Загрузка файла
     Private Sub LoadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoadToolStripMenuItem.Click
         Dim openFileDialog As New OpenFileDialog
         Dim loadArr() As Object
@@ -185,8 +186,9 @@
                 MsgBox("Файл поврежден", MsgBoxStyle.Critical, "Ошибка")
             End Try
         End If
+        Conclus()
     End Sub
-
+    'Вызов контекстного меню для label
     Private Sub lbl_out_MouseClick(sender As Object, e As MouseEventArgs) Handles lbl_out.MouseClick
         If e.Button = MouseButtons.Right Then
             ContextMenuStripMain.Show()
@@ -194,8 +196,16 @@
             ContextMenuStripMain.Left = MousePosition.X
         End If
     End Sub
-
+    'файл -> выход
     Private Sub ВыходToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles ВыходToolStripMenuItem.Click
-        End
+        If MsgBox("Вы уверены?", MsgBoxStyle.YesNo, "Уведомление") = vbYes Then End
+    End Sub
+    'Помощь -> обо мне
+    Private Sub AboutMeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutMeToolStripMenuItem.Click
+        frm_aboutMe.Show()
+    End Sub
+    'Помощь -> о программе
+    Private Sub AboutProgToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutProgToolStripMenuItem.Click
+        MsgBox("Это отличная программа созданная Козюлиным Виталием из группы 521", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "О программе")
     End Sub
 End Class
